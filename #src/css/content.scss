@@ -1,0 +1,308 @@
+.fed {
+   background: url("../img/Shadow.png");
+   background-size: cover;
+   width: 100%;
+   min-height: 100vh;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+
+   &__container {}
+
+   &__title {
+      & p {
+         font-family: Exo2-Thin, sans-serif;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 36px;
+         text-align: center;
+         color: #fff;
+         margin: 0px 0px 0px 0px;
+      }
+   }
+
+   &__items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 -40px;
+   }
+
+   &__item {
+      margin: 22px 40px;
+   }
+
+   &__item-red {
+      background: #d91667;
+
+      & .fed__item-weight {
+         background-color: #D91667;
+      }
+   }
+
+   &__item-blue {
+      background: #1698d9;
+
+   }
+
+   &__item-gray {
+      background: #b3b3b3;
+      //background: url("../img/PhotoGray.png") 0 0 / 100% no-repeat;
+      position: relative;
+
+      & .fed__item-weight {
+         background-color: #B3B3B3;
+      }
+
+   }
+
+   &__item-block {
+      width: 320px;
+      height: 480px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+      clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+      display: block;
+      border-radius: 15px;
+      position: relative;
+
+      &:after {
+         content: "";
+         clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+         width: calc(100% - 8px);
+         height: calc(100% - 8px);
+         top: 4px;
+         left: 4px;
+         border-radius: 15px;
+         background: url(../img/funbox_logo.png) 0 0 / 100% no-repeat;
+         background-position-y: 202px;
+         background-position-x: -40px;
+         background-repeat: no-repeat;
+         background-size: 119%;
+         position: absolute;
+         display: block;
+         z-index: 1;
+         background-color: #f2f2f2;
+         transition: all 0.25s;
+      }
+   }
+
+   &__item-container {
+      padding: 20px 45px;
+      z-index: 2;
+      position: relative;
+   }
+
+   &__item-toptext {
+      font-family: $fontfamily;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      color: #666666;
+   }
+
+   &__item-title {
+      font-family: TrebuchetMS-Bold, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 48px;
+      color: #000;
+   }
+
+   &__item-ellow {
+      color: #FFFF66;
+   }
+
+   &__item-subtitle {
+      font-family: TrebuchetMS-Bold, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      color: #000;
+   }
+
+   &__item-description {
+      margin: 17px 0px 0px 0px;
+
+      & p {
+         font-family: $fontfamily;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 16px;
+         color: #666666;
+         padding: 0;
+         margin: 0;
+      }
+   }
+
+   &__item-weight {
+      width: 80px;
+      height: 80px;
+      z-index: 2;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1698D9;
+      flex-wrap: wrap;
+      position: absolute;
+      bottom: 11px;
+      right: 11px;
+
+      & p {
+         text-align: center;
+         width: 100%;
+         padding: 0;
+         margin: 0;
+         font-family: $fontfamily;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 42px;
+      }
+
+      & span {
+         width: 100%;
+         text-align: center;
+         padding: 0;
+         margin: -19px 0px 0px 0px;
+      }
+   }
+
+   &__item-bottom {
+      margin: 16px 0px 0px 0px;
+      text-align: center;
+      font-family: $fontfamily;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 16px;
+
+      & a {
+         font-family: TrebuchetMS-Bold, sans-serif;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 16px;
+         line-height: 12px;
+         color: #1698d9;
+         text-decoration: none;
+         position: relative;
+      }
+
+      & a:after {
+         content: '';
+         width: 100%;
+         height: 1px;
+         display: block;
+         border-bottom: 1px dotted #1698d9;
+         position: absolute;
+         bottom: 0;
+         left: 0;
+
+      }
+   }
+}
+
+.fed__item-block.fed__item-gray.lock.no_active:before {
+   content: "";
+   clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+   width: calc(100% - 8px);
+   height: calc(100% - 8px);
+   top: 4px;
+   left: 4px;
+   border-radius: 15px;
+   position: absolute;
+   display: block;
+   z-index: 3;
+   background-color: #f2f2f2c4;
+   transition: all 0.25s;
+}
+
+.fed__item-block.no_active {
+   &:after {}
+}
+
+.fed__item-block.active.mouseover {
+   &:after {
+      background-color: #0000007a;
+   }
+}
+
+div.fed__item-block.mouseover.active>div.fed__item-container>div.fed__item-title,
+div.fed__item-block.mouseover.active>div.fed__item-container>div.fed__item-subtitle {
+   color: #fff;
+}
+
+div.fed__item-block.mouseover.active>div.fed__item-container>div.fed__item-toptext {
+   color: #aaa;
+}
+
+div.fed__item-block.mouseover.active>div.fed__item-container>div.fed__item-description {
+   & p {
+      color: #aaa;
+   }
+}
+
+
+
+
+
+
+.shake {
+   animation: shake 0.9s;
+   animation-iteration-count: 1;
+}
+
+
+
+@keyframes shake {
+   0% {
+      transform: translate(1px, 1px) rotate(0deg);
+   }
+
+   10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+   }
+
+   20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+   }
+
+   30% {
+      transform: translate(3px, 2px) rotate(0deg);
+   }
+
+   40% {
+      transform: translate(1px, -1px) rotate(1deg);
+   }
+
+   50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+   }
+
+   60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+   }
+
+   70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+   }
+
+   80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+   }
+
+   90% {
+      transform: translate(1px, 2px) rotate(0deg);
+   }
+
+   100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+   }
+}

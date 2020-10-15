@@ -1,0 +1,111 @@
+//------------Миксин подключения шрифтов------------------------------------------------------------------
+
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }   
+}
+
+//------------Миксин подключения шрифтов------------------------------------------------------------------
+
+//------------Подключение шрифтов------------------------------------------------------------------
+//@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+@import "fonts.scss";
+//------------Подключение шрифтов------------------------------------------------------------------
+
+
+//------------Normalize CSS----------------------------------------------------------------------------------
+
+//@import '/node_modules/normalize.css/normalize.css';
+@import 'normalize';
+
+//------------Normalize CSS----------------------------------------------------------------------------------
+
+//------------Переменные----------------------------------------------------------------------------------
+
+$accent: #fff; // Accent Color
+$fontsize: 16px; // Body Font Size
+$textcolor: #fff; // Text Color
+$texttitle: Intro-Bold, sans-serif; // Roboto Font Family
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+$Exo2-Thin: Exo2-Thin, sans-serif; // Roboto Font Family
+$fontfamily: TrebuchetMS, sans-serif; // Roboto Font Family
+$minwidth: 320px; 
+$maxwidth: 1120;
+$md1: $maxwidth + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+//------------Переменные----------------------------------------------------------------------------------
+//------------Общие параметры----------------------------------------------------------------------------------
+
+body {
+    color: $accent;
+    font-size: $fontsize;
+    font-family: $fontfamily;
+    &.lock {
+        overflow: hidden;
+        @media (max-width: $md3+px) {
+            // width: 100%;
+            // position: fixed;
+            // overflow: hidden;
+        }
+    }
+}
+
+//------------Общие параметры----------------------------------------------------------------------------------
+
+//-----------Оболочка------------------------------------------------------------------------------------------
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+//-----------Оболочка------------------------------------------------------------------------------------------
+
+//------------Основная сетка------------------------------------------------------------------------------
+._container {
+    max-width: $maxwidth + px;
+    margin: 0 auto;
+    @media (max-width: $md1+px) {
+        max-width: 970px;
+    }
+    @media (max-width: $md2+px) {
+        max-width: 750px;
+    }
+    @media (max-width: $md3+px) {
+        max-width: none;
+        margin: 0 10px;
+    }
+}
+
+//------------Подключение слайдера slick------------------------------------------------------------------------------
+
+// @import './node_modules/slick-carousel/slick/slick-theme.scss';
+//@import './node_modules/slick-carousel/slick/slick.scss';
+
+//------------Подключение слайдера slick------------------------------------------------------------------------------
+
+//------------Основная сетка------------------------------------------------------------------------------
+
+@import "header";
+@import "content";
+
+
+
+@import "footer";
+
+//------------Основная сетка------------------------------------------------------------------------------
+
+
+
